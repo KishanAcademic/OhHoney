@@ -1,0 +1,24 @@
+{
+    "name": "ohhoney/proyecto",
+    "descripcion": "Proyecto de Tecnologias de internet",
+    "license": "",
+    "authors": [
+        {
+            "name": "Laura Camila Martinez Carvajal",
+            "email": "est.laura.martinez7@unimilitar.edu.co"
+        },
+        {
+            "name": "Kristyam Camilo Capera Arenas",
+            "email": "est.kristyam.capera@unimilitar.edu.co"
+        }
+    ],
+    "require": {
+
+    },
+    "autoload": {
+        "psr-4": {
+            "ohhoney\\":"src/"
+        }
+    }
+
+}
