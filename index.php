@@ -39,9 +39,11 @@
     </nav>
 
     <div class="container" id="main">
-      
+      <?php
+        require 'vendor/autoload.php';
+        $prenda = new ohhoney\Prenda;
         
-
+      ?>
     </div> <!-- /container -->
 
 
