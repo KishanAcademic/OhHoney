@@ -111,7 +111,7 @@
                                     <?php }?></td>
                                 <td>
                                     <a href="form_registrar.php" class="btn btn-danger">Eliminar</a>
-                                    <a href="form_actualizar.php" class="btn btn-primary">Editar</a>
+                                    <a href="form_actualizar.php?Id=<?php print $item['Id'] ?>" class="btn btn-primary">Editar</a>
                                 </td>
                             </tr>
                             <?php
@@ -126,17 +126,6 @@
                             </tr>
                             <?php }?>
 
-                            <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            </tr>
-                            <tr>
-                            <th scope="row">3</th>
-                            <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
-                            </tr>
                         </tbody>
                     </table>
                 </fieldset>

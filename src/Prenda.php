@@ -64,7 +64,7 @@ class Prenda{
         $resultado = $this->cn->prepare($sql);
 
         $_array = array(
-            ":Id" => $_params['Id']
+            ":Id" => $Id
         );
         if($resultado->execute($_array))
             return true;
@@ -92,7 +92,7 @@ class Prenda{
         $resultado = $this->cn->prepare($sql);
 
         $_array = array(
-            ":Id" => $_params['Id']
+            ":Id" => $Id
         );
 
         if($resultado->execute($_array))

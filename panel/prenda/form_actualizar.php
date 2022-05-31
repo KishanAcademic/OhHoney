@@ -1,3 +1,19 @@
+<?php
+    require '../../vendor/autoload.php';
+    if(isset($_GET['Id']) && is_numeric($_GET['Id'])){
+        $Id = $_GET['Id'];
+
+        $prenda = new ohhoney\Prenda;
+        $resultado = $prenda->mostrarPorId($Id);
+
+        if(!$resultado)
+            header('Location: index.php');
+
+    }else{
+        header('Location: index.php');
+
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -63,13 +79,14 @@
         <div class="d-flex">
             <div class="col-md-12">
                 <form method="post" action="../acciones.php" enctype="multipart/form-data">
+                    <input type="hidenn" name="Id" value="<?php print $resultado['Id'] ?>">
                     <div class="mb-3">
                         <label>Titulo</label>
-                        <input type="text" class="form-control" name="titulo"required>
+                        <input type="text" class="form-control" name="titulo" value="<?php print $resultado['titulo'] ?>"  required>
                     </div>
                     <div class="mb-3">
                         <label>Descripcion</label>
-                            <textarea class="form-control" name="descripcion" required>
+                            <textarea class="form-control" name="descripcion" value="<?php print $resultado['descripcion'] ?>" required>
                             </textarea>
                     </div>
                     <div class="mb-3">
@@ -81,14 +98,15 @@
                     </div>
                     <div class="mb-3">
                         <label>Foto</label>
-                        <input type="file" class="form-control" name="foto"required>
+                        <input type="file" class="form-control" name="foto">
+                        <input type="" name="foto_temp" value="<?php print $resultado['foto'] ?>">
                     </div>
                     <div class="mb-3">
                         <label>Precio</label>
-                        <input type="text" class="form-control" name="precio" placeholder="$0,00"required>
+                        <input type="text" class="form-control" name="precio" placeholder="$0,00" value="<?php print $resultado['precio'] ?>" required>
                     </div>
                     
-                    <input type="submit" class="btn btn-success" value="Actualizar">
+                    <input type="submit" class="btn btn-success" name="accion" value="Actualizar">
                     <a href="index.php" type="submit" class="btn btn-default">cancelar</a>
                 </form>
 
