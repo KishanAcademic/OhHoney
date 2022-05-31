@@ -5,6 +5,10 @@
 
         $prenda = new ohhoney\Prenda;
         $resultado = $prenda->mostrarPorId($Id);
+        /*
+        print '<pre>';
+        print_r($resultado);
+        die;*/
 
         if(!$resultado)
             header('Location: index.php');
@@ -86,14 +90,15 @@
                     </div>
                     <div class="mb-3">
                         <label>Descripcion</label>
-                            <textarea class="form-control" name="descripcion" value="<?php print $resultado['descripcion'] ?>" required>
+                            <textarea class="form-control" name="descripcion" required>
+                                <?php print $resultado['descripcion'] ?>
                             </textarea>
                     </div>
                     <div class="mb-3">
                         <label>Categoria</label>
-                            <select class="form-select" aria-label="Default select example">
-                            <option selected>Open this select menu</option>
-                            <option value="1">ACCION</option>
+                            <select class="form-control" name="categoria_Id"aria-label="Default select example">
+                            <option value="">Seleccionar categoria</option>
+                            <option value="1">One</option>
                             </select>
                     </div>
                     <div class="mb-3">
@@ -106,7 +111,7 @@
                         <input type="text" class="form-control" name="precio" placeholder="$0,00" value="<?php print $resultado['precio'] ?>" required>
                     </div>
                     
-                    <input type="submit" class="btn btn-success" name="accion" value="Actualizar">
+                    <input type="submit" class="btn btn-primary" name="accion" value="Actualizar">
                     <a href="index.php" type="submit" class="btn btn-default">cancelar</a>
                 </form>
 

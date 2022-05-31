@@ -110,7 +110,7 @@
                                     <img src="<?php print $foto;?>" width=50>
                                     <?php }?></td>
                                 <td>
-                                    <a href="form_registrar.php" class="btn btn-danger">Eliminar</a>
+                                    <a href="../acciones.php?Id=<?php print $item['Id'] ?>" class="btn btn-danger">Eliminar</a>
                                     <a href="form_actualizar.php?Id=<?php print $item['Id'] ?>" class="btn btn-primary">Editar</a>
                                 </td>
                             </tr>
