@@ -30,17 +30,23 @@
                     </li>
                 </ul>
                 <div class="d-flex">
-                    <button href="#" class="btn btn-outline-success" type="submit">Prendas</button>
+                    <a href="prenda/index.php" class="btn btn-light" type="button">Prendas</a>
                 </div>
                 <div class="d-flex">
-                    <button href="#" class="btn btn-outline-success" type="submit">Pedidos</button>
+                    <a href="pedidos/index.php" class="btn btn-light" role="button">Pedidos</a>
                 </div>
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Usuario
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Salir</a>
+                <div class="d-flex">
+                    <div class="collapse navbar-collapse d-flex" id="navbarNavDarkDropdown">
+                        <ul class="navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Dropdown
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                </ul>
+                            </li>
+                        </ul>
                     </div>
                 </div>
 
@@ -60,7 +66,7 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="../assets/js/jquery.min.js"></script>
-    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

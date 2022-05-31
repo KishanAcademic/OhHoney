@@ -30,12 +30,12 @@
                     </li>
                 </ul>
                 <div class="d-flex">
-                    <a href="../prenda/index.php" class="btn btn-light" type="button">Prendas</a>
+                    <li class="active">
+                    <a href="index.php" class="btn btn-light" type="button">Prendas</a>
+                    </li>
                 </div>
                 <div class="d-flex">
-                    <li class="active">
-                    <a href="index.php" class="btn btn-light" role="button">Pedidos</a>
-                    </li>
+                    <a href="../pedidos/index.php" class="btn btn-light" role="button">Pedidos</a>
                 </div>
                 <div class="d-flex">
                     <div class="collapse navbar-collapse d-flex" id="navbarNavDarkDropdown">
@@ -59,7 +59,43 @@
     </nav>
 
 
-    <div class="container" id="main">
+    <div class="container" id="main" method="../acciones.php" enctype="multipart/form-data">
+        <div class="d-flex">
+            <div class="col-md-12">
+                <form>
+                    <div class="mb-3">
+                        <label>Titulo</label>
+                        <input type="text" class="form-control" name="titulo "required>
+                    </div>
+                    <div class="mb-3">
+                        <label>Descripcion</label>
+                            <textarea class="form-control" name="descripcion" required>
+                            </textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label>Categoria</label>
+                            <select class="form-select" aria-label="Default select example">
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                            </select>
+                    </div>
+                    <div class="mb-3">
+                        <label>Foto</label>
+                        <input type="file" class="form-control" name="foto "required>
+                    </div>
+                    <div class="mb-3">
+                        <label>Precio</label>
+                        <input type="text" class="form-control" name="precio" placeholder="$0,00"required>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-success">Actualizar</button>
+                    <a href="index.php" type="submit" class="btn btn-default">cancelar</a>
+                </form>
+
+            </div>
+        </div>
 
     </div> <!-- /container -->
 
