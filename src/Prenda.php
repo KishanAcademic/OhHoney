@@ -76,7 +76,7 @@ class Prenda{
         $sql = "SELECT prenda.Id, titulo, descripcion, foto, nombre, precio, fecha FROM prenda
         
         INNER JOIN categorias
-        ON prenda.categoria_Id = categorias.Id ORDER BY peliculas.Id DESC
+        ON prenda.categoria_Id = categorias.Id ORDER BY prenda.Id DESC
         ";
         $resultado = $this->cn->prepare($sql);
 

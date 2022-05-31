@@ -63,7 +63,7 @@
         <div class="d-flex justify-content-end">
             <div>
                 <div>
-                    <a href="form_registro.php" class="btn btn-success">Nuevo</a>
+                    <a href="form_registrar.php" class="btn btn-success">Nuevo</a>
 
                 </div>
             </div>
@@ -80,20 +80,52 @@
                             <th scope="col">Titulo</th>
                             <th scope="col">Categoria</th>
                             <th scope="col">Precio</th>
+                            <th scope="col">Foto</th>
                             <th scope="col">Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
+                            <?php
+                                require '../../vendor/autoload.php';
+                                $prenda = new ohhoney\Prenda;
+
+                                $info_prenda = $prenda->mostrar();
+                                $cantidad = count($info_prenda);
+                                if($cantidad>0){
+                                    $c=0;
+                                    for($x=0;$x<$cantidad;$x++){
+                                        $c++;
+                                        $item = $info_prenda[$x];
+
+                            ?>
+                   
                             <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>
-                                <a href="form_registrar.php" class="btn btn-danger">Eliminar</a>
-                                <a href="form_actualizar.php" class="btn btn-primary">Editar</a>
-                            </td>
+                                <th scope="row"><?php print $c?></th>
+                                <td><?php print $item['titulo']?></td>
+                                <td><?php print $item['nombre']?></td>
+                                <td><?php print $item['precio']?></td>
+                                <td><?php $foto = '../../upload/'.$item['foto'];
+                                if(file_exists($foto)){
+                                    ?>
+                                    <img src="<?php print $foto;?>" width=50>
+                                    <?php }?></td>
+                                <td>
+                                    <a href="form_registrar.php" class="btn btn-danger">Eliminar</a>
+                                    <a href="form_actualizar.php" class="btn btn-primary">Editar</a>
+                                </td>
                             </tr>
+                            <?php
+                                    }
+                                }else{
+                            ?>
+                            
+                            <tr>
+                                <td colspan="6">
+                                    NO HAY REGISTROS
+                                </td>
+                            </tr>
+                            <?php }?>
+
                             <tr>
                             <th scope="row">2</th>
                             <td>Jacob</td>

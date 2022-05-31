@@ -59,13 +59,13 @@
     </nav>
 
 
-    <div class="container" id="main" method="../acciones.php" enctype="multipart/form-data">
+    <div class="container" id="main" >
         <div class="d-flex">
             <div class="col-md-12">
-                <form>
+                <form method="post" action="../acciones.php" enctype="multipart/form-data">
                     <div class="mb-3">
                         <label>Titulo</label>
-                        <input type="text" class="form-control" name="titulo "required>
+                        <input type="text" class="form-control" name="titulo"required>
                     </div>
                     <div class="mb-3">
                         <label>Descripcion</label>
@@ -76,21 +76,19 @@
                         <label>Categoria</label>
                             <select class="form-select" aria-label="Default select example">
                             <option selected>Open this select menu</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            <option value="1">ACCION</option>
                             </select>
                     </div>
                     <div class="mb-3">
                         <label>Foto</label>
-                        <input type="file" class="form-control" name="foto "required>
+                        <input type="file" class="form-control" name="foto"required>
                     </div>
                     <div class="mb-3">
                         <label>Precio</label>
                         <input type="text" class="form-control" name="precio" placeholder="$0,00"required>
                     </div>
                     
-                    <button type="submit" class="btn btn-success">Actualizar</button>
+                    <input type="submit" class="btn btn-success" value="Actualizar">
                     <a href="index.php" type="submit" class="btn btn-default">cancelar</a>
                 </form>
 
