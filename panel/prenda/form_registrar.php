@@ -76,8 +76,22 @@
                         
                         <label>Categoria</label>
                             <select class="form-control" name="categoria_Id" aria-label="Default select example" required>
-                            <option value="">Seleccion categoria</option>
-                            <option value="1">One</option>
+                                <option value="">Seleccion categoria</option>
+                                <?php
+                                    require '../../vendor/autoload.php';
+                                    $categoria = new ohhoney\Categoria;
+                                    $info_categoria = $categoria->mostrar();
+                                    $cantidad = count($info_categoria);
+                                    for($x=0;$x<$cantidad;$x++){
+                                        $item = $info_categoria[$x];
+                                ?>
+                                    <option value="<?php print $item['Id'] ?>"
+                                    <?php print$resultado['categoria_Id']==$item['Id'] ?'selected':''?>
+                                    ><?php print $item['nombre'] ?></option>
+                                <?php
+                                    }
+
+                                ?>
                             </select>
                     </div>
                     <div class="mb-3">

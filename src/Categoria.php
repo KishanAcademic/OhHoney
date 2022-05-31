@@ -2,7 +2,7 @@
 
 namespace ohhoney;
 
-class Prenda{
+class Categoria{
 
     private $config;
     private $cn = null;
@@ -16,5 +16,23 @@ class Prenda{
         ));
 
     }
+
+    public function mostrar(){
+        $sql = "SELECT * FROM categorias";
+
+        $resultado = $this->cn->prepare($sql);
+
+        if($resultado->execute())
+            return $resultado->fetchAll();
+            
+        return false;
+    }
+
+
+
 }
+
+
+
+
 ?>
