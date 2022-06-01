@@ -34,3 +34,13 @@
 	padding:  5px;
 	margin-right: 10px;
 }
+.container{
+	margin: 5px;
+}
+
+.col-md-4{
+	border: 2px solid green;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}

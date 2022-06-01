@@ -85,9 +85,7 @@
                                     for($x=0;$x<$cantidad;$x++){
                                         $item = $info_categoria[$x];
                                 ?>
-                                    <option value="<?php print $item['Id'] ?>"
-                                    <?php print$resultado['categoria_Id']==$item['Id'] ?'selected':''?>
-                                    ><?php print $item['nombre'] ?></option>
+                                    <option value="<?php print $item['Id'] ?>"><?php print $item['nombre'] ?></option>>
                                 <?php
                                     }
 
