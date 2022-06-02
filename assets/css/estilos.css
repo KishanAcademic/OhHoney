@@ -2,6 +2,7 @@
 #main{
     padding: 50px;
 	border: 2px solid green;
+	justify-content: center;
 }
 #cajaprendasindex{	
 	padding: 100px;
@@ -14,6 +15,11 @@
 #seguircomprando{
 	border: 2px solid blue;
 	justify-content: end;
+}
+
+#formcompra{
+	border: 2px solid blueviolet;
+	width: 50%;
 }
 
 .u-size-100{
