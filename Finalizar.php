@@ -48,24 +48,20 @@
             <form action="completar_pedido.php" method="post" >
                 <div class="mb-3">
                     <label class="form-label">Nombres</label>
-                    <input type="text" class="form-control" name="nombreusuario" required> 
+                    <input type="text" class="form-control" name="nombre" required> 
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Apellidos</label>
-                    <input type="text" class="form-control" name="apellidousuario" required> 
+                    <input type="text" class="form-control" name="apellidos" required> 
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Email address</label>
-                    <input type="email" class="form-control" name="emailusuario" required> 
+                    <input type="email" class="form-control" name="email" required> 
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Teléfono</label>
                     <input type="text" class="form-control" name="telefono" required> 
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">Comentario</label>
-                    <textarea class="form-control" name="comentario" rows="4"> </textarea>
-                </div>
+                </div>                
                 <button type="submit" class="btn btn-primary">Enviar</button>
             </form>
         </div>

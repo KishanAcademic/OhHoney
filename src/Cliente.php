@@ -16,5 +16,26 @@ class Cliente{
         ));
 
     }
+
+    public function registrar($_params){
+        $sql = "INSERT INTO `clientes`(`nombre`, `apellidos`, `email`, `telefono`) VALUES (:nombre, :apellidos,:email,:telefono)";
+
+        $resultado = $this->cn->prepare($sql);
+
+        $_array = array(
+            ":nombre" => $_params['nombre'],
+            ":apellidos" => $_params['apellidos'],
+            ":email" => $_params['email'],
+            ":telefono" => $_params['telefono'],
+            
+        );
+        if($resultado->execute($_array))
+            return $this->cn->lastInsertId();
+            
+        return false;    
+
+    }
+
+
 }
 ?>
