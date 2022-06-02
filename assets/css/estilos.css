@@ -1,10 +1,19 @@
-.panel-title{
-	font-size: 14px;
-	text-align: center;
-	font-weight: bold;
-}
+
 #main{
-        margin-top: 100px;
+    padding: 50px;
+	border: 2px solid green;
+}
+#cajaprendasindex{	
+	padding: 100px;
+	border: 2px solid blue;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+#seguircomprando{
+	border: 2px solid blue;
+	justify-content: end;
 }
 
 .u-size-100{
@@ -31,16 +40,12 @@
   
 }
 .d-flex{
-	padding:  5px;
-	margin-right: 10px;
+
 }
 .container{
 	margin: 5px;
 }
 
 .col-md-4{
-	border: 2px solid green;
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
+	
 }

@@ -1,3 +1,11 @@
+<?php
+
+    session_start();
+    require 'funciones.php';
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,16 +35,16 @@
                     </a>
                                        
                 </ul>
-                <form class="d-flex" role="search">
+                <form class="d-flex" id="carritoindex"role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Carrito<span class="badge">0</span></button>
+                    <a href="carrito.php" class="btn btn-outline-success">Carrito<span class="badge"><?php print cantidadPrendas(); ?></span></a>
                 </form>
             </div>
         </div>
     </nav>
 
-    <div class="container" id="main">
-        <div class="d-flex flex-row">
+    <div class="w-100 p-3" id="main">
+        <div class="d-flex" id="cajaprendasindex">
             <?php
                 require 'vendor/autoload.php';
                 $prenda = new ohhoney\Prenda;
@@ -44,14 +52,22 @@
                 $cantidad = count($info_prendas);
                 if($cantidad>0){
                     for($x=0; $x<$cantidad; $x++){
+                        $item = $info_prendas[$x];
             ?>
-            <div class="col-md-4">
+            <div class="col-md-3">
             <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
+                    <?php $foto = 'upload/'.$item['foto'];
+                                if(file_exists($foto)){
+                                    ?>
+                                    <img src="<?php print $foto;?>" class="img responsive" height="300">
+                     <?php }else{?>
+                        <img src="assets/imgs/not_found.png" class="img-responsive">
+                        <?php }?>
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <h5 class="card-title"><?php print $item['titulo']?></h5>
+                    <p class="card-text"><?php print $item['descripcion']?></p>
+                    <a href="carrito.php?Id=<?php print $item['Id']?>" class="btn btn-primary"></span> Añadir</a>
+                    <a href="#" class="btn btn-default">$ <?php print $item['precio']?>K</a>
                 </div>
                 </div>
 
