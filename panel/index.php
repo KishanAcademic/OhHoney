@@ -17,26 +17,17 @@
 
   <body>
 
-  <nav class="navbar navbar-expand-lg bg-light">
-  <div class="container-fluid">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-      <a class="navbar-brand" href="#">Hidden brand</a>
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        
-      </ul>      
+  <nav class="navbar navbar-expand-lg" style="background-color: rgb(32, 22, 12)">
+    <div class="nav1">
+        <a class="navbar-brand" href="../index.php">
+        <img src="../assets/imgs/logo2.png"  width="" height="70">
+        </a>
     </div>
-  </div>
 </nav>
 
-    <div class="container" id="main">
+    <div class="w-100 p-3" id="main">
         <div class="main-login">
-            <form action="login.php" method="post">
+            <form action="login.php" method="post" >
                 <div class="mb-3">
                     <label for="usuarioLogin" class="form-label">Usuario</label>
                     <input type="text" class="form-control" name="nombre_usario" placeholder="usuario" required>

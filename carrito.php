@@ -49,23 +49,17 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg bg-light">
-        <div class="container-fluid">
-            
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <a class="navbar-brand" href="index.php">
-                        <img src="assets/imgs/logo.png" width="" height="30">
-                    </a>
-                                       
-                </ul>
-                <form class="d-flex" id="carritoindex"role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Carrito<ul class="badge"><?php print cantidadPrendas(); ?></ul></button>
-                </form>
-            </div>
-        </div>
-    </nav>
+<nav class="navbar bg-light">
+    <div class="nav1">
+        <a class="navbar-brand" href="index.php">
+        <img src="assets/imgs/logo.png" alt="" width="" height="70">
+        </a>
+    </div>
+    <div class="nav2">
+        <a href="carrito.php" class="btn btn-outline-success">Carrito<span class="badge"><?php print cantidadPrendas(); ?></span></a>
+        <a href="panel/index.php" class="btn btn-outline-success">Login</a>
+    </div>
+</nav>
 
     <div class="w-100 p-3" id="main">
     <table class="table">

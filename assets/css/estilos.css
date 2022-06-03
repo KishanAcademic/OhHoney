@@ -1,25 +1,26 @@
-
 #main{
     padding: 50px;
-	border: 2px solid green;
-	align-content: center;
+	justify-content: center;
+}
+#mainFinalizar{
+	display: flex;
+    padding: 50px;
+	justify-content: center;
 }
 #cajaprendasindex{	
 	padding: 100px;
-	border: 2px solid blue;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 }
 
 #seguircomprando{
-	border: 2px solid blue;
 	justify-content: end;
 }
 
 #formcompra{
-	border: 2px solid blueviolet;
 	width: 50%;
+	text-align: center;
 }
 
 .u-size-100{
@@ -45,13 +46,25 @@
 	margin-top: 100px;
   
 }
-.d-flex{
 
-}
-.container{
-	margin: 5px;
+.form-control{
+	border: none;
+	border-bottom: 3px solid rgb(32, 22, 12);
 }
 
-.col-md-4{
+.btn{
+	background: rgb(32, 22, 12);
+	border: 2px solid rgb(32, 22, 12);
+	color:rgb(233, 190, 76);
+	margin-right: 10px;
+}
+
+.btn:hover{
+	border: rgb(233, 190, 76);
+	background-color: rgb(233, 190, 76);
+}
+
+.col-md-3{
+	padding-top: 30px;
 	
 }

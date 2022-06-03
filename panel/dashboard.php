@@ -32,11 +32,10 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                <a class="navbar-brand" href="#">Hidden brand</a>
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
+                <a class="navbar-brand" href="index.php">
+                    <img src="../assets/imgs/logo.png" alt="" width="" height="70">
+                </a>
                 </ul>
                 <div class="d-flex">
                     <a href="prenda/index.php" class="btn btn-light" type="button">Prendas</a>
