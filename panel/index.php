@@ -36,14 +36,14 @@
 
     <div class="container" id="main">
         <div class="main-login">
-            <form>
+            <form action="login.php" method="post">
                 <div class="mb-3">
                     <label for="usuarioLogin" class="form-label">Usuario</label>
-                    <input type="text" class="form-control" id="usuario" placeholder="usuario" required>
+                    <input type="text" class="form-control" name="nombre_usario" placeholder="usuario" required>
                 </div>
                 <div class="mb-3">
                     <label for="passwordLogin" class="form-label">Contraseña</label>
-                    <input type="password" class="form-control" id="clave"  placeholder="clave" required>
+                    <input type="password" class="form-control" name="clave"  placeholder="clave" required>
                 </div>
                 <div class="d-grid gap-2">
                   <button type="submit" class="btn btn-primary btn-block">Iniciar</button>

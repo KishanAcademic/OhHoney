@@ -1,4 +1,11 @@
 <?php
+
+    session_start();
+
+    if(!isset($_SESSION['usario_info']) OR empty($_SESSION['usario_info'])){
+        header('Location: ../index.php');
+    }
+
     require '../../vendor/autoload.php';
     if(isset($_GET['Id']) && is_numeric($_GET['Id'])){
         $Id = $_GET['Id'];
