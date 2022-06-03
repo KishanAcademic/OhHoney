@@ -8,9 +8,8 @@
 	justify-content: center;
 }
 #cajaprendasindex{	
-	padding: 100px;
+	padding: 30px;
 	display: flex;
-	flex-direction: row;
 	flex-wrap: wrap;
 }
 
@@ -23,9 +22,8 @@
 	text-align: center;
 }
 
-.u-size-100{
-	width: 100px;
-	text-align: center;
+.w-100{
+	justify-content: center;
 }
 
 .main-form{
@@ -64,7 +62,7 @@
 	background-color: rgb(233, 190, 76);
 }
 
-.col-md-3{
-	padding-top: 30px;
+.card{
+	margin: 30px;
 	
 }

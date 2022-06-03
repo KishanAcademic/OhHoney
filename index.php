@@ -39,7 +39,7 @@
     
 
     <div class="w-100 p-3" id="main">
-        <div class="d-flex" id="cajaprendasindex">
+        <div class="container-fluid" id="cajaprendasindex">
             <?php
                 require 'vendor/autoload.php';
                 $prenda = new ohhoney\Prenda;
@@ -49,8 +49,7 @@
                     for($x=0; $x<$cantidad; $x++){
                         $item = $info_prendas[$x];
             ?>
-            <div class="col-md-3">
-            <div class="card" style="width: 18rem;">
+                <div class="card" style="width: 18rem;">
                     <?php $foto = 'upload/'.$item['foto'];
                                 if(file_exists($foto)){
                                     ?>
@@ -58,15 +57,14 @@
                      <?php }else{?>
                         <img src="assets/imgs/not_found.png" class="img-responsive">
                         <?php }?>
-                <div class="card-body">
+                    <div class="card-body">
                     <h5 class="card-title"><?php print $item['titulo']?></h5>
                     <p class="card-text"><?php print $item['descripcion']?></p>
                     <a href="carrito.php?Id=<?php print $item['Id']?>" class="btn btn-primary"></span> Añadir</a>
-                    <a href="#" class="btn btn-default">$ <?php print $item['precio']?>K</a>
-                </div>
+                    <a class="btn btn-default">$ <?php print $item['precio']?>K</a>
+                    </div>
                 </div>
 
-            </div>
 
             <?php }
             } else{?>
