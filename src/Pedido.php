@@ -18,7 +18,7 @@ class Pedido{
     }
 
     public function registrar($_params){
-        $sql = "INSERT INTO `pedidos`(`cliente_Id`, `total`, `fecha`,) VALUES (:cliente_Id,:total,:fecha)";
+        $sql = "INSERT INTO `pedidos`(`cliente_Id`, `total`, `fecha`) VALUES (:cliente_Id,:total,:fecha)";
 
         $resultado = $this->cn->prepare($sql);
 
@@ -54,6 +54,67 @@ class Pedido{
 
     }
 
+    public function mostrar(){
+        $sql = "SELECT p.Id, nombre, apellidos, email, total, fecha FROM pedidos p
+        INNER JOIN clientes c ON p.cliente_Id = c.Id ORDER BY p.Id DESC";
+
+        $resultado = $this->cn->prepare($sql);
+
+        if($resultado->execute())
+        return $resultado->fetchAll();
+
+        return false;    
+    }
+
+    public function mostrarUltimos(){
+        $sql = "SELECT p.Id, nombre, apellidos, email, total, fecha FROM pedidos p
+        INNER JOIN clientes c ON p.cliente_Id = c.Id ORDER BY p.Id DESC LIMIT 10";
+
+        $resultado = $this->cn->prepare($sql);
+
+        if($resultado->execute())
+        return $resultado->fetchAll();
+
+        return false;    
+    }
+
+
+    public function mostrarPorId($Id){
+        $sql = "SELECT p.Id, nombre, apellidos, email, total, fecha FROM pedidos p
+        INNER JOIN clientes c ON p.cliente_Id = c.Id WHERE p.Id = :Id";
+
+        $resultado = $this->cn->prepare($sql);
+
+        $_array = array(
+            ':Id'=>$Id
+        );
+
+        if($resultado->execute($_array))
+            return $resultado->fetch();
+
+        return false;
+    }
+
+    public function mostrarDetallePorIdPedido($Id){
+        $sql = "SELECT 
+                dp.Id,
+                pr.titulo,
+                dp.precio,
+                dp.cantidad,
+                pr.foto
+                FROM detalle_pedidos dp INNER JOIN prenda pr ON pr.Id = dp.prenda_Id WHERE dp.pedido_Id = :Id";
+
+        $resultado = $this->cn->prepare($sql);
+
+        $_array = array(
+            ':Id'=>$Id
+        );
+
+        if($resultado->execute($_array))
+        return $resultado->fetchAll();
+
+        return false;    
+    }
 
 }
 ?>

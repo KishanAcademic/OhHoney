@@ -60,7 +60,64 @@
 
 
     <div class="container" id="main">
+        <div class="d-flex">
+            <div class="col-md-12">
+                <fieldset>
+                    <legend>Listado de Pedidos</legend>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Cliente</th>
+                            <th scope="col">#Pedido</th>
+                            <th scope="col">total</th>
+                            <th scope="col">Fecha</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                                require '../../vendor/autoload.php';
+                                $pedido = new ohhoney\Pedido;
+                                $info_pedido = $pedido->mostrar();
 
+                                $cantidad = count($info_pedido);
+                                if($cantidad>0){
+                                    $c=0;
+                                    for($x=0;$x<$cantidad;$x++){
+                                        $c++;
+                                        $item = $info_pedido[$x];
+
+                            ?>
+                   
+                            <tr>
+                                <th scope="row"><?php print $c?></th>
+                                <td><?php print $item['nombre'].'  '.$item['apellidos']?></td>
+                                <td><?php print $item['Id']?></td>
+                                <td><?php print $item['total']?></td>
+                                <td><?php print $item['fecha']?></td>
+                                <td>
+                                    <a href="ver.php?Id=<?php print $item['Id'] ?>" class="btn btn-primary btn-sm">ver</a>
+                                    
+                                </td>
+                            </tr>
+                            <?php
+                                    }
+                                }else{
+                            ?>
+                            
+                            <tr>
+                                <td colspan="6">
+                                    NO HAY REGISTROS
+                                </td>
+                            </tr>
+                            <?php }?>
+
+                        </tbody>
+                    </table>
+                </fieldset>
+            </div>
+
+        </div>
     </div> <!-- /container -->
 
 
